@@ -7,11 +7,8 @@ import { LuHardDriveDownload } from "react-icons/lu";
 import VolumeController from "./VolumeController";
 import { useState } from "react";
 
-
 const Player = () => {
-
-const [isVolumeVisible, setIsVolumeVisible] = useState(false);
-
+  const [isVolumeVisible, setIsVolumeVisible] = useState(false);
 
   return (
     <div className="fixed bottom-0 right-0 left-0 bg-[#f5f5f5ff] flex flex-col">
@@ -40,28 +37,26 @@ const [isVolumeVisible, setIsVolumeVisible] = useState(false);
           </div>
         </div>
         {/* 2nd Div */}
-        <div className="flex text-2xl lg:text-3xl gap-4 lg:gap-6 lg:2-[40vw] justify-center">
+        <div className="flex text-2xl lg:text-3xl gap-4 lg:gap-6 lg:w-[40vw] justify-center  items-center"> 
           <BiRepeat className="text-gray-400 cursor-pointer" />
           <IoMdSkipBackward className="text-gray-700 hover:text-gray-500 cursor-pointer" />
-          <FaPlay className="text-gray-700 hover-text-gray-500 cursor-pointer" />
+          <FaPlay className="text-gray-700 hover:text-gray-500 cursor-pointer" />
           <IoMdSkipForward className="text-gray-700 hover:text-gray-500 cursor-pointer" />
           <PiShuffleBold className="text-gray-400 cursor-pointer" />
         </div>
         {/* 3rd div */}
         <div
-          className="flex lg:width-[30vw] justify-end 
-items-center" onMouseEnter={() => setVolumeVisible(true)}
-onMouseOut={() => setVolumeVisible(false)}
+          className="flex lg:width-[30vw] justify-content-end items-center lg:mr-3"
+          onMouseEnter={() => setIsVolumeVisible(true)}
+          onMouseOut={() => setIsVolumeVisible(false)}
         >
           <LuHardDriveDownload
-            className="text-gray-700 hover:text-gray-500 text-2xl lg:text-3xl
-        cursor-pointer lg:mr-2 "
+            className="text-gray-700 hover:text-gray-500 text-2xl lg:text-3xl cursor-pointer lg:mr-5"
           />
           <HiSpeakerWave
-            className="text-gray-700 hover:text-gray-500 text-2xl lg:text-3xl
-        cursor-pointer hidden lg:block"
+            className="text-gray-700 hover:text-gray-500 text-2xl lg:text-3xl cursor-pointer hidden lg:block"
           />
-          <VolumeController isVolumeVisible={isVolumeVisible}/>
+          <VolumeController isVolumeVisible={isVolumeVisible} />
         </div>
       </div>
     </div>
@@ -69,3 +64,4 @@ onMouseOut={() => setVolumeVisible(false)}
 };
 
 export default Player;
+
